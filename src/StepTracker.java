@@ -1,5 +1,5 @@
 public class StepTracker {
-    MonthData[] monthToData;
+    MonthData[] monthToData ;
 
     public StepTracker() {
         monthToData = new MonthData[12];
@@ -8,7 +8,7 @@ public class StepTracker {
     }
 
         void saveStepsQty(int month, int day, int steps) {
-            monthToData[month].dataStepsQty[day - 1] = steps;
+            monthToData[month].dataStepsQty[day - 1] = steps; // Двое суток боли, отчаяния, унижения, депресии в этой строчке =)
         }
 
         void printMonthStatistic(int month, int stepsDayTarget) {
@@ -36,10 +36,9 @@ public class StepTracker {
             System.out.println("Среднее количество шагов в месяц " + (stepsTtl / 30) );
             Converter Converter = new Converter();
             System.out.println("Пройденная дистаанция в км " + Converter.sumDistanceMonth(stepsTtl) );
-            System.out.println("Пройденная дистаанция в км " + Converter.sumCaloriesMonth(stepsTtl) );
+            System.out.println("Расходованные кило каллории " + Converter.sumCaloriesMonth(stepsTtl) );
             System.out.println("Лучшая серия дней в месяце " + setStepsDayTarget );
         }
-
 }
 
 

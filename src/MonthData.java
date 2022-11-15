@@ -4,7 +4,6 @@ class MonthData {
         MonthData() {
             dataStepsQty = new int[30];
         }
-
 }
 
 
