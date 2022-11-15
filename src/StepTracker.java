@@ -14,10 +14,10 @@ public class StepTracker {
         void printMonthStatistic(int month, int stepsDayTarget) {
             int stepsTtl = 0; // переменная общего количества шагов в месяц
             int maxStepsQty = 0; // переменная маскимально кол-ва шагов в лучший день
-            int setStepsDayTarget = 0; // ??переменная для счета лучшей серии дней по кол-ву шагов
-            int setcount = 0; // переменная для сечта дней больше целевого
+            int setStepsDayTarget = 0; // переменная для счета лучшей серии дней по кол-ву шагов
+            int setcount = 0; // переменная счетчик
             for (int i = 0; i < monthToData[month].dataStepsQty.length; i++) {
-                System.out.print((i + 1) + " день: " + monthToData[month].dataStepsQty[i] + " шагов");
+                System.out.print((i + 1) + " день: " + monthToData[month].dataStepsQty[i] + " шагов, ");
                 stepsTtl += monthToData[month].dataStepsQty[i];
                 if (maxStepsQty < monthToData[month].dataStepsQty[i]) {
                     maxStepsQty = monthToData[month].dataStepsQty[i];
@@ -27,6 +27,9 @@ public class StepTracker {
                 } else {
                     if (setcount > setStepsDayTarget) {
                         setStepsDayTarget = setcount;
+                        setcount = 0; // обнуляем счетчик серии
+                    } else {
+                        setcount = 0; // обнуляем счетчик серии
                     }
                 }
             }
