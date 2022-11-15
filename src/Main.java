@@ -5,16 +5,20 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         System.out.println("Пришло время практики!");
+        int stepsDayTarget = 10000;
+        StepTracker StepTracker = new StepTracker();
         Scanner scanner = new Scanner(System.in);
         MenuPrinter MenuPrinter = new MenuPrinter();
         MenuPrinter.printMenu();
         int userInput = scanner.nextInt();
 
+
         while (userInput != 4) {
+
             if (userInput > 4 || userInput <= 0) { // Проверяем корректность выбора меню (&& не уверн будет ли работать!)
                 System.out.println("Такой комынды нет в меню, повторите ввод.");
+
             } else if (userInput == 1) {
-                // вызов класса StepTracker.Main.StepTracker.StepTracker, метод ввода шагов в массив(месяц, день) (возможно выбор месяца, дня и кол-ва шагов надо оставить в StepTracker.Main)
                 System.out.println("Выберите за какой месяй Вы хотите ввести данные: 0-Янв., 1-Фев., 2-Мар., 3-Апр., 4-Май, 5-Июн., 6-Июл., 7-Авг.,8-Сен., 9-Окт., 10-Ноя., 11-Дек.");
                 int month = scanner.nextInt();
                 System.out.println("Выберите за какое день месяца Вы хотите ввести количестов шагов.");
@@ -24,15 +28,22 @@ public class Main {
                 if (steps < 0) {
                     System.out.println("Количество шагов не может быть отрицательным, обратитесь к врачу");
                 }
-                //StepTracker.saveStepsQty(month, day, steps);
-                System.out.println("Вы внесли " + steps + " шагов " + day + " числа " + month + " месяца.");
+                StepTracker.saveStepsQty(month, day, steps);
+                //System.out.println("Вы внесли " + steps + " шагов " + day + " числа " + month + " месяца.");
+
             } else if (userInput == 2) {
-                // вызов класса StepTracker.Main.StepTracker.StepTracker, метод печати статистики (возможно выбор месяца, надо оставить в StepTracker.Main)
                 System.out.println("Выберите за какой месяй Вы хотите узнать статистику: 0-Янв., 1-Фев., 2-Мар., 3-Апр., 4-Май, 5-Июн., 6-Июл., 7-Авг.,8-Сен., 9-Окт., 10-Ноя., 11-Дек.");
                 int month = scanner.nextInt();
-                //StepTracker.giveStatus(month);
+                StepTracker.printMonthStatistic(month, stepsDayTarget);
+
             } else if (userInput == 3) {
-                // вызов класса StepTracker.Main.StepTracker.StepTracker, метод изменение целевого кол-ва шагов (цель одна на всех дней)
+                System.out.println("Введите новое значение целевого количестваа шагов за день: ");
+                int stepsDayTargetControl = scanner.nextInt();
+                if (stepsDayTargetControl < 0) {
+                    System.out.println("Не ленитесь, количество шагов должно быть больше 0");
+                } else {
+                    stepsDayTarget = stepsDayTargetControl;
+                }
             } else {
                 break;
             }
@@ -41,6 +52,7 @@ public class Main {
         }
 
     }
+
 
     public static class MenuPrinter {
         void printMenu() {
@@ -52,5 +64,6 @@ public class Main {
         }
     }
 }
+
 
 
