@@ -16,22 +16,22 @@ public class Main {
             } else if (userInput == 1) {
                 System.out.println("Выберите за какой месяй Вы хотите ввести данные: 0-Янв., 1-Фев., 2-Мар., 3-Апр., 4-Май, 5-Июн., 6-Июл., 7-Авг.,8-Сен., 9-Окт., 10-Ноя., 11-Дек.");
                 int month = scanner.nextInt();
-                    if (month > 11 || month < 0) { // Возможность скорретировать ввод
-                        System.out.println("Месяцев 11, повторите ввод");
-                        month = scanner.nextInt();
-                    }
+                if (month > 11 || month < 0) { // Возможность скорретировать ввод
+                    System.out.println("Месяцев 11, повторите ввод");
+                    month = scanner.nextInt();
+                }
                 System.out.println("Выберите за какое число месяца Вы хотите ввести количестов шагов.");
                 int day = scanner.nextInt();
-                    if (day > 30 || day <= 0 ) { // Возможность скорретировать ввод
-                        System.out.println("В месяце 30 дней, повторите ввод");
-                        day = scanner.nextInt();
-                    }
+                if (day > 30 || day <= 0) { // Возможность скорретировать ввод
+                    System.out.println("В месяце 30 дней, повторите ввод");
+                    day = scanner.nextInt();
+                }
                 System.out.println("Введите колличество шагов.");
                 int steps = scanner.nextInt();
-                    if (steps < 0) { // Возможность скорретировать ввод
-                        System.out.println("Количество шагов не может быть отрицательным, повторите ввод");
-                        steps = scanner.nextInt();
-                    }
+                if (steps < 0) { // Возможность скорретировать ввод
+                    System.out.println("Количество шагов не может быть отрицательным, повторите ввод");
+                    steps = scanner.nextInt();
+                }
                 stepTracker.saveStepsQty(month, day, steps);
 
             } else if (userInput == 2) {
@@ -42,11 +42,11 @@ public class Main {
             } else if (userInput == 3) {
                 System.out.println("Введите новое значение целевого количестваа шагов за день: ");
                 int stepsDayTargetControl = scanner.nextInt();
-                    if (stepsDayTargetControl < 0) { // проверяем ввод значения
-                        System.out.println("Не ленитесь, количество шагов должно быть больше 0");
-                    } else {
-                        dailyStepsTarget = stepsDayTargetControl;
-                    }
+                if (stepsDayTargetControl < 0) { // проверяем ввод значения
+                    System.out.println("Не ленитесь, количество шагов должно быть больше 0");
+                } else {
+                    dailyStepsTarget = stepsDayTargetControl;
+                }
 
             } else {
                 break;

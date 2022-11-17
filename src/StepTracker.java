@@ -1,5 +1,5 @@
 public class StepTracker {
-    MonthData[] monthToData ;
+    MonthData[] monthToData;
 
     public StepTracker() {
         monthToData = new MonthData[12];
