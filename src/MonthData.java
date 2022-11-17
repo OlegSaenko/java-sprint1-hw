@@ -1,9 +1,7 @@
 class MonthData {
+    int[] dataStepsQty;
 
-        int[] dataStepsQty;
-        MonthData() {
-            dataStepsQty = new int[30];
-        }
+    MonthData() {
+        dataStepsQty = new int[30];
+    }
 }
-
-
