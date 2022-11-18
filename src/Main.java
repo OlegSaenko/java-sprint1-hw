@@ -5,7 +5,7 @@ public class Main {
         int dailyStepsTarget = 10000;
         StepTracker stepTracker = new StepTracker();
         Scanner scanner = new Scanner(System.in);
-        MenuPrinter MenuPrinter = new MenuPrinter();
+        MenuPrinter menuPrinter = new MenuPrinter();
         MenuPrinter.printMenu();
         int userInput = scanner.nextInt();
 
