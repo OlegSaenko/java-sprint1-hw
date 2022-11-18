@@ -6,7 +6,7 @@ public class Main {
         StepTracker stepTracker = new StepTracker();
         Scanner scanner = new Scanner(System.in);
         MenuPrinter menuPrinter = new MenuPrinter();
-        MenuPrinter.printMenu();
+        menuPrinter.printMenu();
         int userInput = scanner.nextInt();
 
         while (userInput != 4) {
@@ -51,7 +51,7 @@ public class Main {
             } else {
                 break;
             }
-            MenuPrinter.printMenu();
+            menuPrinter.printMenu();
             userInput = scanner.nextInt();
         }
     }
