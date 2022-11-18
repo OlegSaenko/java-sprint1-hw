@@ -1,5 +1,5 @@
 public class StepTracker {
-    MonthData[] monthToData;
+    MonthData[] monthToData; // пробел перед ; удален
 
     public StepTracker() {
         monthToData = new MonthData[12];
